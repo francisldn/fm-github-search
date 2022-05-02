@@ -14,8 +14,6 @@ export default function Profile ({darkMode, userdata}:SearchBarProps) {
         }
     }
 
-    console.log(userdata.created_at, formatDate(userdata.created_at))
-
     return (
         <div className={darkMode? "profile_dm": "profile_lm"}>
             <div className="user-img">

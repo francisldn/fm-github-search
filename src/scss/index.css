@@ -32,6 +32,9 @@
   justify-content: space-around;
   max-width: 5rem;
 }
+.header_right_lm span {
+  padding-right: 8px;
+}
 .header_right_dm {
   font-family: "Space Mono";
   font-size: 13px;
@@ -42,6 +45,9 @@
   display: flex;
   justify-content: space-around;
   max-width: 5rem;
+}
+.header_right_dm span {
+  padding-right: 8px;
 }
 
 @media screen and (max-width: 850px) {

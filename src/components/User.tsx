@@ -24,6 +24,6 @@ export class User {
         this.created_at = userResponse.created_at;
         this.bio = userResponse.bio;
         this.name= userResponse.name;
-        this.login= `@${userResponse.login}`;
+        this.login= `${userResponse.login}`;
     }
 }

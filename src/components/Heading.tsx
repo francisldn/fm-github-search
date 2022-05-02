@@ -1,12 +1,26 @@
 import * as React from 'react';
+import {useEffect} from 'react';
 import sun from '../assets/icon-sun.svg';
 import moon from '../assets/icon-moon.svg';
 import { DarkModeProps } from '../App';
 
 export default function Heading ({darkMode, setDarkMode}: DarkModeProps) {
+    let storedMode = localStorage.getItem('darkMode');
     
+    useEffect(() => {
+        if(storedMode) {
+            setDarkMode && setDarkMode(true);
+        }
+    },[storedMode])
+
     const toggleDarkMode = () => {
-        setDarkMode && setDarkMode(!darkMode);
+        if(!darkMode) {
+            setDarkMode && setDarkMode(true);
+            localStorage.setItem("darkMode","true");
+        } else {
+            localStorage.setItem("darkMode",'');
+            setDarkMode && setDarkMode(false);
+        }
     }
  
 

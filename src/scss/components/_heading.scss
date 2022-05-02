@@ -1,0 +1,66 @@
+@use '../abstracts/' as *;
+
+
+.header {  
+    &_lm {
+        @include h1-bold;
+        color: map-get($colors, lm-darkgrey);
+        display: flex;
+        justify-content: space-between;
+        align-self: center;
+        width: toRem(730);
+    }
+    &_dm {
+        @include h1-bold;
+        color: map-get($colors, dm-white);
+        display: flex;
+        justify-content: space-between;
+        align-self: center;
+        width: toRem(730);
+    }
+}
+
+.header {
+    &_right_lm {
+        @include h4-normal;
+        color: map-get($colors, lm-grey);
+        align-self: center;
+        padding-right: 1rem;
+        display: flex;
+        justify-content: space-around;
+        max-width: 5rem;
+    }
+
+    &_right_dm {
+        @include h4-normal;
+        color: map-get($colors, dm-white);
+        align-self: center;
+        padding-right: 1rem;
+        display: flex;
+        justify-content: space-around;
+        max-width: 5rem;
+    }
+
+}
+
+@media screen and (max-width:map-get($breakpoints, sm)) {
+    .header {  
+        &_lm {
+            width:toRem(327);
+        }
+        &_dm {
+            width: toRem(327);
+        }
+    }
+}
+
+@media screen and (max-width:map-get($breakpoints, md)) {
+    .header {  
+        &_lm {
+            width:toRem(573);
+        }
+        &_dm {
+            width: toRem(573);
+        }
+    }
+}

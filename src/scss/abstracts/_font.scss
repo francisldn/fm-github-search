@@ -1,0 +1,30 @@
+@mixin h1-bold {
+    font-family:  'Space Mono';
+    font-size: 26px;
+    line-height: 38px;
+    font-weight: bold;
+}
+
+@mixin h2-bold {
+    font-family: 'Space Mono';
+    font-size: 22px;
+    line-height: 33px;
+    font-weight: bold;
+}
+ 
+@mixin h3-normal {
+    font-family: 'Space Mono';
+    font-size: 16px;
+    line-height: 24px;
+}
+
+@mixin h4-normal {
+    font-family:'Space Mono';
+    font-size: 13px;
+    line-height: 20px;
+}
+@mixin body-normal {
+    font-family:'Space Mono';
+    font-size: 15px;
+    line-height: 25px;
+}

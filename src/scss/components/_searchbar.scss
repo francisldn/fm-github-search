@@ -1,0 +1,132 @@
+@use '../abstracts/' as *;
+
+
+@mixin searchbar_lm ($maxWidth, $maxHeight) {
+    background-color: map-get($colors, lm-white);
+    width: $maxWidth;
+    height: $maxHeight;
+    display: flex;
+    align-self: center;
+    align-items: center;
+ 
+}
+
+@mixin searchbar_dm($maxWidth, $maxHeight) {
+    background-color: map-get($colors, dm-darkgrey);
+    width: $maxWidth;
+    height: $maxHeight;
+    display: flex;
+    align-self: center;
+    align-items: center;
+
+}
+
+.searchbar {
+    &_lm {
+        @include searchbar_lm(730px,69px);
+        box-sizing: border-box;
+        padding-left: 20px;
+        border-radius: 15px;
+        
+    }
+    &_dm {
+        @include searchbar_dm(730px,69px);
+        box-sizing: border-box;
+        padding-left: 20px;
+        border-radius: 15px;
+        
+    }
+    .icon-search{
+        align-self: center;
+        justify-self: flex-start;
+    }
+      
+}
+
+.inputbar {
+    &_lm {
+        @include h3-normal;
+        flex-grow: 1;
+        background-color: transparent;
+        color: map-get($colors, lm-darkgrey);
+        border: none;
+        &:focus{
+            border: none;
+            outline: none;
+        }
+    }
+    &_dm {
+        @include h3-normal;
+        flex-grow: 1;
+        background-color: transparent;
+        color: map-get($colors, dm-white);
+        border: none;
+        &:focus{
+            border: none;
+            outline: none;
+        }
+    }
+}
+
+.btn-search {
+    
+    &_lm {
+        @include h3-normal;
+        width: toRem(106);
+        height: toRem(50);
+        background-color: map-get($colors,lm-blue);
+        color:map-get($colors,lm-white);
+        cursor: pointer;
+        justify-self:end;
+        border-radius: 15px;
+        border: none;
+        &:hover {
+            background-color: lighten(map-get($colors,lm-blue),6);
+        }
+
+    }
+    &_dm {
+        @include h3-normal;
+        width: toRem(106);
+        height: toRem(50);
+        background-color: map-get($colors,lm-blue);
+        color:map-get($colors,lm-white);
+        cursor: pointer;
+        justify-self:end;
+        border-radius: 15px;
+        border: none;
+        &:hover {
+            background-color: lighten(map-get($colors,lm-blue),6);
+        }
+    }
+}
+
+form {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    padding-left: toRem(20);
+    padding-right: toRem(20);
+}
+
+@media screen and (max-width: map-get($breakpoints,sm)) {
+    .searchbar {
+        &_dm {
+            @include searchbar_dm(toRem(327), toRem(60))
+        }
+        &_lm {
+            @include searchbar_lm(toRem(327), toRem(60))
+        }
+    }
+}
+
+@media screen and (max-width: map-get($breakpoints,md)) {
+    .searchbar {
+        &_dm {
+            @include searchbar_dm(toRem(573), toRem(69))
+        }
+        &_lm {
+            @include searchbar_lm(toRem(573), toRem(69))
+        }
+    }
+}

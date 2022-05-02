@@ -1,0 +1,175 @@
+@use '../abstracts/' as *;
+
+@mixin profile_lm ($maxWidth, $maxHeight) {
+    width: $maxWidth;
+    height: $maxHeight;
+    background-color: map-get($colors,lm-white);
+    border-radius: 15px;
+    color: map-get($colors, lm-darkgrey);
+    display: flex;
+    align-self: center;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+
+}
+
+@mixin profile_dm ($maxWidth,$maxHeight) {
+    width: $maxWidth;
+    height: $maxHeight;
+    background-color: map-get($colors,dm-darkgrey);
+    border-radius: 15px;
+    color: map-get($colors, dm-white);
+    display: flex;
+    align-self: center;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.profile {
+    &_lm {
+        @include profile_lm(toRem(730),toRem(444));
+
+        a {
+            color: map-get($colors,lm-darkgrey)
+        }
+    }
+
+    &_dm {
+        @include profile_dm(toRem(730),toRem(444));
+        
+        a {
+            color: map-get($colors,dm-white)
+        }
+    }
+}
+
+.user-img {
+    align-self: flex-start;
+}
+
+.img-container {
+    height: toRem(117);
+    width: toRem(117);
+    border-radius: 50%;
+    align-self:flex-start;
+    margin: 3rem;
+
+    .img-user {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+        overflow: hidden;
+        border-radius: 50%;
+    }
+}
+
+.user-data-container {
+    flex: 1;
+    height: 100%;
+    padding-right:toRem(48);
+    padding-top: toRem(40);
+    font-family:var(--default-font-family);
+    
+    .user-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        h1 {
+            margin-bottom: 0px;
+        }
+        span {
+            margin-top: 1rem;
+        }
+    }
+
+    .user-bio-box {
+        @include h4-normal;
+        display: flex;
+        flex-direction: column;
+        max-height: 5rem;
+        overflow:scroll;
+        margin-bottom: 10px;
+        span {
+            color: map-get($colors,lm-blue);
+        }
+    }
+
+    .user-stats-box{
+        &_lm {
+            display: flex;
+            justify-content: space-around;
+            background-color: map-get($colors,lm-lightgrey);
+            box-sizing: border-box;
+            padding-top: 15px;
+            align-self: center;
+
+            h2 {
+                margin: 0px;
+                padding: 10px 0 15px 0;
+            }
+        }   
+        &_dm{
+            display: flex;
+            justify-content: space-around;
+            background-color: map-get($colors, dm-black);
+            box-sizing: border-box;
+            padding-top: 15px;
+            align-self: center;
+
+            h2 {
+                margin: 0px;
+                padding: 10px 0 15px 0;
+            }
+        }
+
+    }
+
+    .user-bottom {
+        @include h4-normal;
+        margin-top: 15px;
+        display: grid;
+        display: -ms-grid;
+        grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+        -ms-grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+        grid-gap: 1rem;
+        .user-bottom-info {
+           img {
+                padding: 10px 10px 0 10px;
+           }
+           
+        }
+        
+    }
+}
+
+@media screen and (max-width:map-get($breakpoints, sm)) {
+    .profile {
+        &_lm {
+            @include profile_lm(toRem(327),toRem(517))
+        }
+        &_dm {
+            @include profile_dm(toRem(327),toRem(517))
+        }
+    }
+
+    .img-container {
+        width: toRem(70);
+        height: toRem(70);
+    }
+}
+
+@media screen and (max-width:map-get($breakpoints, md)) {
+    .profile {
+        &_lm {
+            @include profile_lm(toRem(573),toRem(481))
+        }
+        &_dm {
+            @include profile_dm(toRem(573),toRem(481))
+        }
+    }
+
+
+
+}

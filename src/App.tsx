@@ -1,24 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React,{useState, useEffect} from 'react';
+import './scss/index.css';
+import Heading from './components/Heading';
+import SearchBar from './components/SearchBar';
+import Profile from './components/Profile';
+import { User } from './components/User';
+
+export interface DarkModeProps {
+  darkMode: boolean;
+  setDarkMode?: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+let userResponse = {
+    avatar_url:'',
+    followers: null,
+    following: null,
+    blog:'',
+    location:'',
+    public_repos:null,
+    company: '',
+    twitter_username: '',
+    created_at:'',
+    bio: '',
+    name: '',
+    login: '',
+}
 
 function App() {
+  const [darkMode, setDarkMode] = useState(false);
+  const [userdata, setUserdata] = useState(new User(userResponse))
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={darkMode ? "container_dm": "container_lm"}>
+      <Heading darkMode={darkMode} setDarkMode={setDarkMode}/>
+      <SearchBar darkMode={darkMode} userdata={userdata} setUserdata={setUserdata}/>
+      
+      <Profile darkMode={darkMode} userdata={userdata} />
+      
     </div>
   );
 }

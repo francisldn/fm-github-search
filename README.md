@@ -33,8 +33,8 @@ The GitHub users API endpoint is `https://api.github.com/users/:username`. Defau
   * SCSS
   * Github API
 
-[Code](https://github.com/francisldn/fm-github-search)
-[Frontend](https://fm-github-search.vercel.app/)
+* [Code](https://github.com/francisldn/fm-github-search)
+* [Frontend](https://fm-github-search.vercel.app/)
 ## Challenges 
 * <h4>SCSS setup</h4>
   As this is my first time using SCSS, setting up the folder structure took a while for me, but once it is set up, it provided much easier development experience compared to using vanilla CSS. In particular, I would like to highlight a few things as below.

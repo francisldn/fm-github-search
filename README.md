@@ -38,10 +38,10 @@ The GitHub users API endpoint is `https://api.github.com/users/:username`. Defau
 ## Challenges 
 * <h4>SCSS setup</h4>
   As this is my first time using SCSS, setting up the folder structure took a while for me, but once it is set up, it provided much easier development experience compared to using vanilla CSS. In particular, I would like to highlight a few things as below.
-    - Nesting of CSS selectors - SCSS allows for nesting of selectors which allows for easier maintenance and reading
-    - Creating variables using ``@mixin`` and ``@functions`` which provide for reusability
-    - Creating CSS group properties such as ``colors`` and ``font`` and then allow for easy retrieval then using ``map-get`` function
-    - SCSS function such as ``lighten()`` enables user to easily change color to lighter shade
+    1. Nesting of CSS selectors - SCSS allows for nesting of selectors which allows for easier maintenance and reading
+    2. Creating variables using ``@mixin`` and ``@functions`` which provide for reusability
+    3. Creating CSS group properties such as ``colors`` and ``font`` and then allow for easy retrieval then using ``map-get`` function
+    4. SCSS function such as ``lighten()`` enables user to easily change color to lighter shade
 
 * <h4>Typescript React</h4>
   I have used React in JS before, but this is my first time using Typescript React for development. Given the strongly-typed nature of Typescript, it took me a longer development time as I had to figure out how to resolve certain error messages which are specific to Typescript. I had found Typescript intimidating in the past and was put off by the longer time requirement for development, but this experience has helped me appreciate Typescript a bit more and understand ways to deal with Typescript-specific errors. 

@@ -152,6 +152,14 @@ form {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
 }
+form span {
+  display: none;
+  font-family: "Space Mono";
+  font-size: 16px;
+  line-height: 24px;
+  color: red;
+  padding-right: 8px;
+}
 
 @media screen and (max-width: 850px) {
   .searchbar_dm {

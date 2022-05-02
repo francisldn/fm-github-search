@@ -89,6 +89,24 @@ form {
     flex: 1;
     padding-left: toRem(20);
     padding-right: toRem(20);
+
+    span {
+        display: none;
+        @include h3-normal;
+        color: red;
+        padding-right: 8px;
+        opacity: 1;
+        animation: fadeOut 1s;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
 }
 
 @media screen and (max-width: map-get($breakpoints,md)) {

@@ -1,8 +1,7 @@
 import * as React from 'react';
-import {useState, useRef} from 'react';
+import {useState, useRef, useEffect} from 'react';
 import search from '../assets/icon-search.svg';
 import {User} from './User';
-
 
 export interface SearchBarProps {
     darkMode: boolean;
@@ -12,11 +11,13 @@ export interface SearchBarProps {
 
 export default function SearchBar({darkMode, userdata, setUserdata}: SearchBarProps) {
     const [input, setInput] = useState('');
-    const searchRef = useRef(null)
+    const [isError, setIsError] = useState(false);
+    const spanRef = useRef<HTMLSpanElement>(null);
 
     const handleChange = (e:React.ChangeEvent<HTMLInputElement>) => {
         e.preventDefault();
         setInput(e.target.value);
+        setIsError(false);
     }
 
 
@@ -25,22 +26,19 @@ export default function SearchBar({darkMode, userdata, setUserdata}: SearchBarPr
         await fetch(`https://api.github.com/users/${input}`)
         .then(response => {
             if (!response.ok) {
-                throw Error(response.statusText)
+                setIsError(true);
             }
-            return response.json()
+            return response.json();
         })
         .then(data => setUserdata && setUserdata(data))
-        .catch((err) => {
-           console.log(err)
-        })
     }
-
 
     return (
     <div className={darkMode ? "searchbar_dm":"searchbar_lm"}>
       <img className="icon-search" src={search} alt="" />
       <form onSubmit={handleSubmit} >
         <input className={darkMode? "inputbar_dm": "inputbar_lm"} type="text" placeholder="Search Github username..." value={input} onChange={(e) => handleChange(e)}/>
+        <span style={{display: isError ? "inline":"none"}} ref={spanRef}>No results</span>
         <button type="submit" className="btn-search">Search</button>
     </form>
     </div>

@@ -27,9 +27,11 @@ export default function Profile ({darkMode, userdata}:SearchBarProps) {
                     <h1>{userdata.name}</h1>
                     <span>{`Joined ${formatDate(userdata.created_at)}`}</span>
                 </div>
-                <div><span>{`@${userdata.login}`}</span></div>
+                
+                <div className="user-login"><span>{`@${userdata.login}`}</span></div>
+                
                 <div className="user-bio-box">
-                    <p className="">{userdata.bio? userdata.bio : `This profile has no bio` }</p>
+                    <p>{userdata.bio? userdata.bio : `This profile has no bio` }</p>
                 </div>
                 <div className={darkMode? "user-stats-box_dm": "user-stats-box_lm"}>
                     <div className="user-repos">

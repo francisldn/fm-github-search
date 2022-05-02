@@ -34,7 +34,7 @@ export default function SearchBar({darkMode, userdata, setUserdata}: SearchBarPr
       <img className="icon-search" src={search} alt="" />
       <form onSubmit={handleSubmit}>
         <input className={darkMode? "inputbar_dm": "inputbar_lm"} type="text" placeholder="Search Github username..." value={input} onChange={(e) => handleChange(e)}/>
-        <button type="submit" className={"btn-search" + " " + darkMode? "btn-search_dm" : "btn-search_lm"} >Search</button>
+        <button type="submit" className="btn-search">Search</button>
     </form>
     </div>
   );

@@ -49,6 +49,10 @@
     align-self: flex-start;
 }
 
+.user-login {
+    color: map-get($colors,dm-blue)
+}
+
 .img-container {
     height: toRem(117);
     width: toRem(117);
@@ -144,6 +148,62 @@
     }
 }
 
+
+@media screen and (max-width:map-get($breakpoints, md)) {
+    .profile {
+        &_lm {
+            @include profile_lm(toRem(573),toRem(481))
+        }
+        &_dm {
+            @include profile_dm(toRem(573),toRem(481))
+        }
+    }
+
+    .img-container {
+        margin-top: 2.0rem;
+    }
+
+    .user-data-container {
+        justify-self: flex-start;
+        position: absolute;
+        top: 280px;
+        margin-left: toRem(50);
+        width:toRem(493);
+    }
+
+    .user-header {
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        
+        span {
+            position: absolute;
+            top: 130px;
+            margin-left: -30px;
+        }
+    }
+
+    .user-login {
+        margin-left: 150px;
+    }
+
+    .user-bio-box {
+        margin-top: 65px;
+        max-height: 4rem;
+    }
+    
+    .user-bottom {
+        grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+        -ms-grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+        grid-gap: 0.5rem;
+        height: toRem(63);
+        margin-top: 10px;
+        padding-top: 0px;
+    }
+
+}
+
+
 @media screen and (max-width:map-get($breakpoints, sm)) {
     .profile {
         &_lm {
@@ -157,19 +217,54 @@
     .img-container {
         width: toRem(70);
         height: toRem(70);
+        margin: 2rem;
     }
-}
 
-@media screen and (max-width:map-get($breakpoints, md)) {
-    .profile {
+    .user-data-container {
+        justify-self: flex-start;
+        position: absolute;
+        top: 260px;
+        margin-left: toRem(30);
+        width:toRem(279);
+
+        .user-header {
+            margin-left: 2rem;
+            span {
+                position: absolute;
+                top: 100px;
+                margin-left: 40px;
+            }
+        }
+        h1 {
+            @include h2-bold;
+        }
+    }
+
+    .user-login {
+        margin-left: 90px;
+    }
+
+    .user-bio-box {
+        margin-top: 30px;
+        max-height: 4rem;
+        max-width: 100%;
+        overflow-x: hidden;
+        overflow-wrap: break-word;
+    }
+    .user-stats-box {
         &_lm {
-            @include profile_lm(toRem(573),toRem(481))
+            height: 85px;
+            h2 {
+                @include h3-normal;
+            }
         }
         &_dm {
-            @include profile_dm(toRem(573),toRem(481))
+            height: 85px;
+            h2 {
+                @include h3-normal;
+            }
         }
+        
     }
-
-
-
+    
 }

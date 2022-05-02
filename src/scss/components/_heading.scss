@@ -43,6 +43,21 @@
 
 }
 
+
+@media screen and (max-width:map-get($breakpoints, md)) {
+    .header {  
+        &_lm {
+            @include h2-bold;
+            width:toRem(573);
+        }
+        &_dm {
+            @include h2-bold;
+            width: toRem(573);
+        }
+    }
+}
+
+
 @media screen and (max-width:map-get($breakpoints, sm)) {
     .header {  
         &_lm {
@@ -50,17 +65,6 @@
         }
         &_dm {
             width: toRem(327);
-        }
-    }
-}
-
-@media screen and (max-width:map-get($breakpoints, md)) {
-    .header {  
-        &_lm {
-            width:toRem(573);
-        }
-        &_dm {
-            width: toRem(573);
         }
     }
 }

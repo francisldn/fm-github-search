@@ -69,35 +69,17 @@
 }
 
 .btn-search {
-    
-    &_lm {
-        @include h3-normal;
-        width: toRem(106);
-        height: toRem(50);
-        background-color: map-get($colors,lm-blue);
-        color:map-get($colors,lm-white);
-        cursor: pointer;
-        justify-self:end;
-        border-radius: 15px;
-        border: none;
-        &:hover {
-            background-color: lighten(map-get($colors,lm-blue),6);
-        }
-
-    }
-    &_dm {
-        @include h3-normal;
-        width: toRem(106);
-        height: toRem(50);
-        background-color: map-get($colors,lm-blue);
-        color:map-get($colors,lm-white);
-        cursor: pointer;
-        justify-self:end;
-        border-radius: 15px;
-        border: none;
-        &:hover {
-            background-color: lighten(map-get($colors,lm-blue),6);
-        }
+    @include h3-normal;
+    width: toRem(106);
+    height: toRem(50);
+    background-color: map-get($colors,lm-blue);
+    color:map-get($colors,lm-white);
+    cursor: pointer;
+    justify-self:end;
+    border-radius: 15px;
+    border: none;
+    &:hover {
+        background-color: lighten(map-get($colors,lm-blue),6);
     }
 }
 
@@ -109,6 +91,18 @@ form {
     padding-right: toRem(20);
 }
 
+@media screen and (max-width: map-get($breakpoints,md)) {
+    .searchbar {
+        &_dm {
+            @include searchbar_dm(toRem(573), toRem(69))
+        }
+        &_lm {
+            @include searchbar_lm(toRem(573), toRem(69))
+        }
+    }
+}
+
+
 @media screen and (max-width: map-get($breakpoints,sm)) {
     .searchbar {
         &_dm {
@@ -118,15 +112,29 @@ form {
             @include searchbar_lm(toRem(327), toRem(60))
         }
     }
-}
-
-@media screen and (max-width: map-get($breakpoints,md)) {
-    .searchbar {
-        &_dm {
-            @include searchbar_dm(toRem(573), toRem(69))
-        }
+    .btn-search {
+        height: toRem(46);
+        width: toRem(84);
+    }
+    .inputbar {
         &_lm {
-            @include searchbar_lm(toRem(573), toRem(69))
+            max-width: toRem(170);
+            font-size:14px;
+            
+        }
+        &_dm {
+            max-width: toRem(170);
+            font-size:14px;
+            
+        }
+    }
+
+    .searchbar {
+        &_lm {
+            padding-left: 10px;
+        }
+        &_dm {
+            padding-left: 10px;
         }
     }
 }

@@ -16,7 +16,7 @@ The GitHub users API endpoint is `https://api.github.com/users/:username`. Defau
 ### Screenshots
 
 <img src="lightmode.png" alt="light-mode"/>
-<img src="lightmode.png" alt="dark-mode"/>
+<img src="darkmode.png" alt="dark-mode"/>
 
 ### Expected behaviour
 

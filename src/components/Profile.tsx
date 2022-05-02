@@ -62,7 +62,7 @@ export default function Profile ({darkMode, userdata}:SearchBarProps) {
                     </div>
                     <div className="user-bottom-info">
                         <img src={company} alt="company" />
-                        <span>{userdata.company ? userdata.company: "@github"}</span>
+                        <a href={userdata.company}>{userdata.company ? userdata.company: "@github"}</a>
                     </div>
     
                 </div>

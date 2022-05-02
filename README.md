@@ -50,5 +50,5 @@ The GitHub users API endpoint is `https://api.github.com/users/:username`. Defau
   It took me a while to adjust the desktop layout to tablet and mobile. I eventually used ``position: absolute`` to organise the layout as required. I have learnt various CSS position properties and the pros and cons of using these properties. 
 
 * <h4> Dark mode and light mode & localStorage </h4>
-  I have learnt how to set dark and light mode using CSS properties and how to store the state in localStorage, using ``localStorage.getItem()`` and ``localStorage.setItem()`` functions. This allows user to store their viewing mode preference in the local storage and preference will be persisted for their next visit. 
+  I have learnt how to set dark and light mode using CSS properties and how to store the state in localStorage, using ``localStorage.getItem()`` and ``localStorage.setItem()`` functions. This allows user to store their viewing mode preference in the local storage and their preference will be persisted for their next visit. 
 

@@ -18,6 +18,9 @@ export default function SearchBar({darkMode, userdata, setUserdata}: SearchBarPr
         e.preventDefault();
         setInput(e.target.value);
         setIsError(false);
+        if(spanRef.current) {
+            spanRef.current.style.cssText += "display:none;";
+        };
     }
 
 
@@ -27,8 +30,9 @@ export default function SearchBar({darkMode, userdata, setUserdata}: SearchBarPr
         .then(response => {
             if (!response.ok) {
                 setIsError(true);
-                // eslint-disable-next-line
-                // spanRef.current && spanRef.current.style.cssText += "display:inline"
+                if(spanRef.current) {
+                    spanRef.current.style.cssText += "display:inline;";
+                };
             }
             return response.json();
         })
@@ -40,7 +44,7 @@ export default function SearchBar({darkMode, userdata, setUserdata}: SearchBarPr
       <img className="icon-search" src={search} alt="" />
       <form onSubmit={handleSubmit} >
         <input className={darkMode? "inputbar_dm": "inputbar_lm"} type="text" placeholder="Search Github username..." value={input} onChange={(e) => handleChange(e)}/>
-        <span style={{display: isError ? "inline":"none"}} ref={spanRef}>No results</span>
+        <span ref={spanRef}>No results</span>
         <button type="submit" className="btn-search">Search</button>
     </form>
     </div>

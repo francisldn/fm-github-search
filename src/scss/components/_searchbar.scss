@@ -95,19 +95,18 @@ form {
         @include h3-normal;
         color: red;
         padding-right: 8px;
-        opacity: 1;
-        animation: fadeOut 1s;
+        animation: fadeOut 5s ease in;
+    }
+    @keyframes fadeOut {
+        from {
+            opacity: 1;
+        }
+        to {
+            opacity: 0;
+        }
     }
 }
 
-@keyframes fadeOut {
-    from {
-        opacity: 1;
-    }
-    to {
-        opacity: 0;
-    }
-}
 
 @media screen and (max-width: map-get($breakpoints,md)) {
     .searchbar {

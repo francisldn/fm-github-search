@@ -4,7 +4,6 @@
     &_lm {
         background-color: map-get($colors, lm-lightgrey);
         width: 100%;
-        min-height: 900px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -13,12 +12,10 @@
     &_dm {
         background-color: map-get($colors, dm-black);
         width: 100%;
-        min-height: 900px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         gap: 1.5rem;
-
     }
 }
 

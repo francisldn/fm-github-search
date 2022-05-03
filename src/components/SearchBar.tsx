@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {useState, useRef, useEffect} from 'react';
+import {useState, useRef} from 'react';
 import search from '../assets/icon-search.svg';
 import {User} from './User';
 
@@ -27,6 +27,8 @@ export default function SearchBar({darkMode, userdata, setUserdata}: SearchBarPr
         .then(response => {
             if (!response.ok) {
                 setIsError(true);
+                // eslint-disable-next-line
+                // spanRef.current && spanRef.current.style.cssText += "display:inline"
             }
             return response.json();
         })

@@ -11,13 +11,11 @@ export interface SearchBarProps {
 
 export default function SearchBar({darkMode, userdata, setUserdata}: SearchBarProps) {
     const [input, setInput] = useState('');
-    const [isError, setIsError] = useState(false);
     const spanRef = useRef<HTMLSpanElement>(null);
 
     const handleChange = (e:React.ChangeEvent<HTMLInputElement>) => {
         e.preventDefault();
         setInput(e.target.value);
-        setIsError(false);
         if(spanRef.current) {
             spanRef.current.style.cssText += "display:none;";
         };
@@ -29,7 +27,6 @@ export default function SearchBar({darkMode, userdata, setUserdata}: SearchBarPr
         await fetch(`https://api.github.com/users/${input}`)
         .then(response => {
             if (!response.ok) {
-                setIsError(true);
                 if(spanRef.current) {
                     spanRef.current.style.cssText += "display:inline;";
                 };
@@ -44,7 +41,7 @@ export default function SearchBar({darkMode, userdata, setUserdata}: SearchBarPr
       <img className="icon-search" src={search} alt="" />
       <form onSubmit={handleSubmit} >
         <input className={darkMode? "inputbar_dm": "inputbar_lm"} type="text" placeholder="Search Github username..." value={input} onChange={(e) => handleChange(e)}/>
-        <span ref={spanRef}>No results</span>
+        <span className="fade" ref={spanRef}>No results</span>
         <button type="submit" className="btn-search">Search</button>
     </form>
     </div>

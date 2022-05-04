@@ -152,15 +152,36 @@ form {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
 }
-form span {
+
+.fade {
   display: none;
   font-family: "Space Mono";
   font-size: 16px;
   line-height: 24px;
   color: red;
+  opacity: 1;
   padding-right: 8px;
+  -webkit-animation: fadeOut 5s forwards;
+          animation: fadeOut 5s forwards;
 }
 
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
 @media screen and (max-width: 850px) {
   .searchbar_dm {
     background-color: rgb(30, 42, 71);
@@ -221,7 +242,6 @@ form span {
 .container_lm {
   background-color: rgb(246, 248, 255);
   width: 100%;
-  min-height: 900px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -230,7 +250,6 @@ form span {
 .container_dm {
   background-color: rgb(20, 29, 47);
   width: 100%;
-  min-height: 900px;
   display: flex;
   flex-direction: column;
   justify-content: center;

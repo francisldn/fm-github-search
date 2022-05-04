@@ -90,23 +90,25 @@ form {
     padding-left: toRem(20);
     padding-right: toRem(20);
 
-    span {
-        display: none;
-        @include h3-normal;
-        color: red;
-        padding-right: 8px;
-        animation: fadeOut 5s ease in;
-    }
-    @keyframes fadeOut {
-        from {
-            opacity: 1;
-        }
-        to {
-            opacity: 0;
-        }
-    }
+    
 }
 
+.fade {
+    display: none;
+    @include h3-normal;
+    color: red;
+    opacity: 1;
+    padding-right: 8px;
+    animation: fadeOut 5s forwards;
+}
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
 
 @media screen and (max-width: map-get($breakpoints,md)) {
     .searchbar {
